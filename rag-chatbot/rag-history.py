@@ -10,12 +10,14 @@ from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain.chains import create_history_aware_retriever, create_retrieval_chain
 from langchain_core.chat_history import BaseChatMessageHistory
 from langchain_core.runnables.history import RunnableWithMessageHistory
+from langchain_openai import ChatOpenAI
 import chainlit as cl 
 from config import config
 
 load_dotenv()
 
-groq_api_key = os.getenv("GROQ_API_KEY")
+groq_api_key = os.getenv("OPENAI_API_KEY")
+# groq_api_key = os.getenv("GROQ_API_KEY")
 qdrant_url = os.getenv("QDRANT_URL")
 qdrant_api_key = os.getenv("QDRANT_API_KEY")
 
@@ -84,7 +86,8 @@ def get_session_history(session_id: str) -> BaseChatMessageHistory:
             store[session_id] = ChatMessageHistory()
         return store[session_id]
 
-llm = ChatGroq(temperature=1, model_name="gemma2-9b-it",streaming=True)
+# llm = ChatGroq(temperature=0, model_name="gemma2-9b-it",streaming=True)
+llm=ChatOpenAI(model_name="o3-mini", streaming=True)
 
 def qa_bot(prakriti):
     client = QdrantClient(api_key=qdrant_api_key, url=qdrant_url,)

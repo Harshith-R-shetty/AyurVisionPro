@@ -86,7 +86,7 @@ def get_session_history(session_id: str) -> BaseChatMessageHistory:
             store[session_id] = ChatMessageHistory()
         return store[session_id]
 
-# llm = ChatGroq(temperature=0, model_name="gemma2-9b-it",streaming=True)
+#llm = ChatGroq(temperature=0, model_name="gemma2-9b-it",streaming=True)
 llm=ChatOpenAI(model_name="o3-mini", streaming=True)
 
 def qa_bot(prakriti):

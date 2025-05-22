@@ -29,7 +29,7 @@ class Location(BaseModel):
     lat: float
     lng: float
 
-@app.get('/')
+@app.get("/")
 def hello():
     return "Hello from AyurVision!"
     @app.get("/api/google-maps-key")
@@ -69,6 +69,7 @@ async def get_nearby_doctors(location: Location):
         return JSONResponse(content=doctors)
 
     except Exception as e:
+        print("❌ Error fetching doctor data:", e)
         raise HTTPException(status_code=500, detail="Error fetching doctor data")
 
 if __name__ == '__main__':

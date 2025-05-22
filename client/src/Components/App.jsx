@@ -13,7 +13,7 @@ export default function App() {
           <Route path="/" Component={Home} />
           <Route path="/myform" Component={MyForm} />
           <Route path="/image-predict" Component={ImagePredict} />
-          <Route path="/doctors" exact component={NearbyDoctorsMap} />
+          <Route path="/findDoctors" Component={NearbyDoctorsMap} />
         </Routes>
       </div>
     </Router>

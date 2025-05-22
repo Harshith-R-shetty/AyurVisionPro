@@ -164,3 +164,4 @@ dist
 .pnp.*
 
 .venv
+rag-chatbot/venv/

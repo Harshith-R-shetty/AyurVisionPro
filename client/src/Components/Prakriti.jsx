@@ -213,7 +213,6 @@ const Prakriti = () => {
     32: [2, 0, 1],
   };
 
-
   const doshaMap = {
     0: "Vata",
     1: "Pitta",
@@ -638,10 +637,10 @@ const Prakriti = () => {
                     />
                   </>
                 )}
-                  {apiResponse && !isSubmitting && (
+                {apiResponse && !isSubmitting && (
                   <div className="flex justify-center items-center flex-col gap-8">
-                    <BarChart dataObject={labeledPercentages}/>
-                      {dominantVikrithi && (
+                    <BarChart dataObject={labeledPercentages} />
+                    {dominantVikrithi && (
                       <p className="text-xl">
                         Dominant Vikrithi: <b>{capitalize(dominantVikrithi)}</b>
                       </p>

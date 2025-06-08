@@ -87,8 +87,9 @@ def get_session_history(session_id: str) -> BaseChatMessageHistory:
         return store[session_id]
 
 # llm = ChatGroq(temperature=0, model_name="gemma2-9b-it",streaming=True)
-llm = ChatGroq(temperature=0, model_name="llama-3.3-70b-versatile",streaming=True)
-# llm = ChatOpenAI(model="gpt-4o",temperature=0,max_tokens=256)
+# llm = ChatGroq(temperature=0, model_name="llama-3.3- 70b-versatile",streaming=True)
+# llm = ChatGroq(temperature=0, model_name="llama-3.3-70b-versatile")
+llm = ChatOpenAI(model="gpt-4o",temperature=0,max_tokens=256)
 
 def qa_bot(prakriti):
     client = QdrantClient(api_key=qdrant_api_key, url=qdrant_url,)

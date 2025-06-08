@@ -1,5 +1,5 @@
 class Config:
-    prakriti = "netural"
+    prakriti = "neutral"
     needs_refresh = False
 
 

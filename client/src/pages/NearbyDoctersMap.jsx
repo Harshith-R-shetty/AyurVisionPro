@@ -3,6 +3,7 @@ import axios from 'axios';
 import GoogleMap from '../Components/GoogleMaps';
 import ErrorBoundary from '../Components/ErrorBoundary';
 import Navbar from '../Components/Navbar';
+import MoonLoader from "react-spinners/MoonLoader";
 
 const NearbyDoctorsMap = () => {
   const [doctors, setDoctors] = useState([]);
@@ -28,7 +29,11 @@ const NearbyDoctorsMap = () => {
     });
   }, []);
 
-  if (loading) return <div>Loading nearby doctors...</div>;
+  if (loading) return (
+    <div className="flex items-center justify-center h-screen w-screen">
+      <MoonLoader size={50} color="green" />
+    </div>
+  );
 
   return (
     <div className="flex flex-col md:flex-row h-screen">
